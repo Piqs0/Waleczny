@@ -1,0 +1,12 @@
+.task-container input[type=text] {
+    width: 5vh;
+    border-width: 1px;
+    -webkit-transition: width 0.7s ease-in-out;
+    transition: width 0.7s ease-in-out;
+    box-sizing: border-box;
+}
+
+.task-container input[type=text]:focus {
+    width: 25%;
+    padding: 6px;
+}

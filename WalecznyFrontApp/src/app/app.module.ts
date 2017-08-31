@@ -3,11 +3,15 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from "@angular/http";
 import { AppComponent } from './app.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
+import { ListOfTaskComponent } from './components/list-of-task/list-of-task.component';
+import { TaskComponent } from './components/task/task.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainPageComponent
+    MainPageComponent,
+    ListOfTaskComponent,
+    TaskComponent
   ],
   imports: [
     BrowserModule,
