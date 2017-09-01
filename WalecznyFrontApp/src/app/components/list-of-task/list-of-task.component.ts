@@ -36,6 +36,7 @@ export class ListOfTaskComponent implements OnInit {
     this.newTask=<ITask>{}
   }
   addItem() {
+    debugger
     let task=this.newTask;
     this.tasks.push(task);
   }
