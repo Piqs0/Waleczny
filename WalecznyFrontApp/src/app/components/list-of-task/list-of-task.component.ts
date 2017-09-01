@@ -16,8 +16,10 @@ export class ListOfTaskComponent implements OnInit {
 
     
    }
-
+  
   ngOnInit() {
   }
+
+
 
 }

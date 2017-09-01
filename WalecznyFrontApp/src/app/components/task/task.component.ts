@@ -13,8 +13,14 @@ export class TaskComponent implements OnInit {
   constructor() {
     
    }
-
   ngOnInit() {
+  }
+
+  focusout()
+  {
+ 
+    this.task=<ITask>{};
+
   }
 
 }
