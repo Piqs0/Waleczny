@@ -8,19 +8,12 @@ import { ITask } from "app/components/task/ITask";
 })
 export class TaskComponent implements OnInit {
   @Input()
-  task:ITask=<ITask>{};
+  task:ITask;
 
   constructor() {
     
    }
   ngOnInit() {
-  }
-
-  focusout()
-  {
- 
-    this.task=<ITask>{};
-
   }
 
 }
