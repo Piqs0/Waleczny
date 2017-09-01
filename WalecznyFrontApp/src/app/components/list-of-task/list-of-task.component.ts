@@ -28,7 +28,7 @@ export class ListOfTaskComponent implements OnInit {
         this.addItem();
         this.createNewEmptyItem();
       }
-    });
+    },500);
   }
   ngOnInit() {
   }
@@ -36,7 +36,6 @@ export class ListOfTaskComponent implements OnInit {
     this.newTask=<ITask>{}
   }
   addItem() {
-    debugger
     let task=this.newTask;
     this.tasks.push(task);
   }

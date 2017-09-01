@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {FormsModule} from '@angular/forms'
 import { HttpModule } from "@angular/http";
 import { AppComponent } from './app.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
@@ -13,12 +14,14 @@ import { FocusOutDirective } from './directives/focus-out-directive'
     MainPageComponent,
     ListOfTaskComponent,
     TaskComponent,
+    
 
     FocusOutDirective
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
