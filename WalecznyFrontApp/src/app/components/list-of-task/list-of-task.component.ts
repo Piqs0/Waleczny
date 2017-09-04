@@ -8,7 +8,7 @@ import { ITask } from "app/components/task/ITask";
 })
 export class ListOfTaskComponent implements OnInit {
 
-  newTask:ITask=<ITask>{};
+  newTask: ITask = <ITask>{};
   tasks: ITask[]
   ifAddNewIt: boolean = false;
   constructor() {
@@ -19,24 +19,38 @@ export class ListOfTaskComponent implements OnInit {
   }
 
   newTaskFocusIn() {
+    if(!this.newTask.priority)
+      this.newTask.priority=50;
+    
     this.ifAddNewIt = false;
   }
   newTaskFocusOut() {
     this.ifAddNewIt = true;
     setTimeout(() => {
       if (this.ifAddNewIt) {
-        this.addItem();
-        this.createNewEmptyItem();
+        this.handleAddItem();
       }
-    },500);
+    }, 500);
+  }
+
+  handleAddItem() {
+    if(!this.ifCorrect())
+      return;
+    this.addItem();
+    this.createNewEmptyItem();
+  }
+  ifCorrect(){
+    return this.newTask.name;
   }
   ngOnInit() {
   }
   createNewEmptyItem() {
-    this.newTask=<ITask>{}
+    this.newTask = <ITask>{
+      
+    }
   }
   addItem() {
-    let task=this.newTask;
+    let task = this.newTask;
     this.tasks.push(task);
   }
 

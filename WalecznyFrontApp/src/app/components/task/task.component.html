@@ -1,7 +1,7 @@
 <div class="task-container">
-    <span><input [(ngModel)]="task.status" placeholder="status"/> </span>
-    <span><input type="text"  [(ngModel)]="task.name" placeholder="name"/></span>
-    <span><input [(ngModel)]="task.category" placeholder="category" /></span>
-    <span><input [(ngModel)]="task.executionTime" placeholder="ececutionTime"/></span>
-    <span><input [(ngModel)]="task.priority" placeholder="priority" /></span>
+    <span><input type="text" [(ngModel)]="task.status" placeholder="status"/> </span>
+    <span><input class="name" type="text" title={{task.name}}  [(ngModel)]="task.name" placeholder="name"/></span>
+    <span><input type="text" [(ngModel)]="task.category" placeholder="category" /></span>
+    <span><input type="number" [(ngModel)]="task.executionTime" placeholder="execution time"/></span>
+    <span><input type="number" [(ngModel)]="task.priority" placeholder="priority" /></span>
 </div>

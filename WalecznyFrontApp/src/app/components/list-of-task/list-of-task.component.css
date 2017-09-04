@@ -1,0 +1,10 @@
+.tasksContainer {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.newTaskContainer {
+    border: 3px lightgray solid;
+    border-radius: 5px;
+    width: 70%
+}

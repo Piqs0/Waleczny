@@ -1,12 +1,25 @@
-.task-container input[type=text] {
-    width: 5vh;
+.task-container .name:focus {
+    width: 35%;
+    padding: 6px;
+}
+
+.task-container input {
+    padding: 1px;
+    width: 8vh;
+    box-sizing: border-box;
+    border-radius: 5px;
+    height: 30px;
+    text-align: center;
+    margin: 1px;
+    background-color: lightgray;
+    background: linear-gradient(to bottom right, lightgray, white);
+}
+
+.task-container .name {
     border-width: 1px;
+    width: 250px;
     -webkit-transition: width 0.7s ease-in-out;
     transition: width 0.7s ease-in-out;
     box-sizing: border-box;
-}
-
-.task-container input[type=text]:focus {
-    width: 25%;
-    padding: 6px;
+    margin-top: 5px;
 }

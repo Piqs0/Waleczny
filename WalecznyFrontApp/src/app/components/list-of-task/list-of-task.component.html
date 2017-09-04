@@ -1,5 +1,7 @@
-<app-task focus-out (focusOut)="newTaskFocusOut()" (focusIn)="newTaskFocusIn()" [(task)]="newTask">
-</app-task>
-<div *ngFor="let task of tasks">
-    <app-task [task]="task"></app-task>
+<div class="newTaskContainer">
+    <app-task focus-out (focusOut)="newTaskFocusOut()" (focusIn)="newTaskFocusIn()" [(task)]="newTask">
+    </app-task>
+</div>
+<div class="tasksContainer">
+    <app-task *ngFor="let task of tasks" [task]="task"></app-task>
 </div>
