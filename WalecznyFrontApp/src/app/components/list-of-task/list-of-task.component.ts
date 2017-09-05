@@ -1,27 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { ITask } from "app/components/task/ITask";
+import { TasksService } from "app/components/list-of-task/list-of-taks.service";
+import { Observable,BehaviorSubject } from "rxjs/Rx";
+
 
 @Component({
   selector: 'app-list-of-task',
   templateUrl: './list-of-task.component.html',
-  styleUrls: ['./list-of-task.component.css']
+  styleUrls: ['./list-of-task.component.css'],
+  providers: [TasksService]
 })
 export class ListOfTaskComponent implements OnInit {
 
   newTask: ITask = <ITask>{};
-  tasks: ITask[]
+  tasksSubject: BehaviorSubject<ITask[]>
   ifAddNewIt: boolean = false;
-  constructor() {
-    this.tasks = <ITask[]>[
-      <ITask>{ name: "pierwszy", category: "osobiste", executionTime: "1min", priority: 50, status: "rozpo" },
-      <ITask>{ name: "drugi", category: "osobiste", executionTime: "2min", priority: 50, status: "zak" }
-    ]
+  constructor(private taskService: TasksService) {
+    this.tasksSubject = new BehaviorSubject(  this.taskService.getTasks());
+    
   }
 
   newTaskFocusIn() {
-    if(!this.newTask.priority)
-      this.newTask.priority=50;
-    
+    if (!this.newTask.priority)
+      this.newTask.priority = 50;
+
     this.ifAddNewIt = false;
   }
   newTaskFocusOut() {
@@ -34,24 +36,24 @@ export class ListOfTaskComponent implements OnInit {
   }
 
   handleAddItem() {
-    if(!this.ifCorrect())
+    if (!this.ifCorrect())
       return;
     this.addItem();
     this.createNewEmptyItem();
   }
-  ifCorrect(){
+  ifCorrect() {
     return this.newTask.name;
   }
   ngOnInit() {
   }
   createNewEmptyItem() {
     this.newTask = <ITask>{
-      
+
     }
   }
   addItem() {
     let task = this.newTask;
-    this.tasks.push(task);
+    this.tasksSubject.next([task]);
   }
 
 
